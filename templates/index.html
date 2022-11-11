@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hearing Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Red+Hat+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class='main_div'>
+    <div class="inner_div">
+      <form action="{{ url_for('predict')}}" method="post">
+
+        <label class="independent" for="firstname" style="    margin-left: 18px;">Age:</label>
+        <input type="text" id="firstname" name="fname" placeholder="Enter Age in Years">
+        <br>
+        <br>
+        <br>
+        <label class="independent" for="lastname">Fitness Score:</label>
+        <input type="text" id="lastname" name="lname" placeholder="Enter fitness score">
+        <div class="btn-div">
+          <button class = "btnn" type="submit">Evaluate</button>
+        </div>
+        <br>
+        <br>
+        <h2 class="pred_text">{{ prediction_text }}
+          <h2>
+
+    </div>
+    </form>
+  </div>
+</body>
+  <style>
+  .pred_text{
+    font-size:250%;
+    color:yellow;
+    font-family: 'Major Mono Display', monospace;
+  }
+  .btnn{
+  position:relative;
+  color:white;
+<!--  left:10%;-->
+  bottom:600px;
+    border-color:black;
+   background-color:black;
+  transition:background-color .5s;
+  transition:border-color .1s;
+<!--  position:relative;-->
+<!--  margin-bottom:40px;-->
+  }
+  .btnn:hover{
+  border-color:red;
+  background-color:red;
+}
+      body {
+      background-color: #C4FB6D;
+      background-image: linear-gradient(to right, red, blue);
+    }
+
+    .main_div {
+      text-align: center;
+<!--      background-color: blue;-->
+      height: 200px;
+      padding-top: 20%;
+    }
+
+    .inner_div {
+<!--      background-color: green;-->
+      position: relative;
+      text-align: center;
+    }
+
+    .independent {
+      color: white;
+      font-size: 140%;
+      font-family: 'Red Hat Display', sans-serif;
+    }
+    .btn-div{
+      display:inline;
+      margin:0;
+
+    }
+  </style>
+</html>
